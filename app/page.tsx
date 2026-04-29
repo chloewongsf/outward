@@ -270,7 +270,7 @@ export default function Home() {
 
         <div className="bg-white/90 rounded-3xl shadow-sm p-7 sm:p-8 lg:p-12">
           <p className="text-xs lg:text-sm text-[var(--color-muted)] leading-relaxed mb-7 lg:mb-9">
-            Tell us about yourself once — we&apos;ll handle the rest every morning.
+            Tell us about yourself and we&apos;ll handle the rest every morning.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-6">
