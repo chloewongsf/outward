@@ -255,7 +255,7 @@ export default function ResultsPage() {
         {/* Greeting */}
         <div className="mb-8 lg:mb-10">
           <h1
-            className="text-5xl sm:text-6xl lg:text-8xl leading-tight"
+            className="text-5xl sm:text-6xl lg:text-6xl leading-tight"
             style={{ fontFamily: "var(--font-serif)", color: "rgba(180, 130, 140, 0.55)" }}
           >
             {greeting().split(" ").map((w, i) => (
