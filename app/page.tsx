@@ -284,7 +284,7 @@ export default function Home() {
                 value={form.favoriteThings}
                 onChange={(e) => setForm({ ...form, favoriteThings: e.target.value })}
                 required
-                className="w-full bg-transparent text-[var(--color-ink)] placeholder:text-stone-300 text-sm lg:text-base leading-relaxed border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-2 resize-none transition-colors"
+                className="w-full bg-transparent text-[var(--color-ink)] placeholder:text-stone-300 text-sm lg:text-base border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-2 resize-none transition-colors"
               />
             </div>
 
