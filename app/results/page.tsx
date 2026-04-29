@@ -609,6 +609,7 @@ function CardContent({
 function MobileCarousel({
   sections, data, location,
   added, feedbackOpen, feedbackNote, setFeedbackNote, openFeedback, addToProfile, setFeedbackOpen,
+  cardLoading, regenerateCard,
 }: {
   sections: typeof SECTIONS;
   data: Recommendation;
