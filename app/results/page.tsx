@@ -262,7 +262,7 @@ export default function ResultsPage() {
               <span key={i} className="block">{w}</span>
             ))}
           </h1>
-          <p className="text-xs lg:text-base tracking-[0.12em] text-[var(--color-muted)] mt-4 uppercase">
+          <p className="text-xs lg:text-sm tracking-[0.12em] text-[var(--color-muted)] mt-4 uppercase">
             Here&apos;s your day
           </p>
         </div>
@@ -281,13 +281,13 @@ export default function ResultsPage() {
               variants={cardVariants}
               whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(160,120,100,0.11)" }}
               transition={{ type: "spring", stiffness: 350, damping: 28 }}
-              className="bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12 lg:col-span-2"
+              className="bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-8 lg:col-span-2"
             >
               <p className="text-[10px] lg:text-sm tracking-[0.18em] text-[var(--color-warm)] uppercase mb-3 lg:mb-4">
                 Your taste
               </p>
               <p
-                className="text-lg sm:text-xl lg:text-3xl leading-relaxed text-[var(--color-ink)]"
+                className="text-lg sm:text-xl lg:text-xl leading-relaxed text-[var(--color-ink)]"
                 style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300 }}
               >
                 {data.taste_summary}
@@ -311,7 +311,7 @@ export default function ResultsPage() {
                 variants={cardVariants}
                 whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(160,120,100,0.11)" }}
                 transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                className={`hidden lg:block bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12${span ? ` ${span}` : ""}`}
+                className={`hidden lg:block bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-8${span ? ` ${span}` : ""}`}
               >
                 <CardContent
                   label={label}
@@ -330,13 +330,13 @@ export default function ResultsPage() {
               variants={cardVariants}
               whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(35,31,24,0.22)" }}
               transition={{ type: "spring", stiffness: 350, damping: 28 }}
-              className="bg-[var(--color-ink)] rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12 lg:col-span-2"
+              className="bg-[var(--color-ink)] rounded-3xl shadow-sm p-6 sm:p-8 lg:p-8 lg:col-span-2"
             >
               <p className="text-[10px] lg:text-sm tracking-[0.18em] text-white/40 uppercase mb-3 lg:mb-4">
                 Today&apos;s nudge
               </p>
               <p
-                className="text-base sm:text-lg lg:text-2xl text-white leading-relaxed"
+                className="text-base sm:text-lg lg:text-lg text-white leading-relaxed"
                 style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
               >
                 {data.today_nudge}
@@ -352,15 +352,15 @@ export default function ResultsPage() {
             <motion.div
               whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(160,120,100,0.11)" }}
               transition={{ type: "spring", stiffness: 350, damping: 28 }}
-              className="bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12"
+              className="bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-8"
             >
               <p
-                className="text-sm lg:text-lg text-[var(--color-ink)] mb-1"
+                className="text-sm lg:text-base text-[var(--color-ink)] mb-1"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Not feeling these?
               </p>
-              <p className="text-xs lg:text-base text-[var(--color-muted)] mb-5 lg:mb-6">
+              <p className="text-xs lg:text-sm text-[var(--color-muted)] mb-5 lg:mb-6">
                 Pick a different mood or just shake it up.
               </p>
               <div className="flex gap-2 flex-wrap mb-5 lg:mb-6">
@@ -370,7 +370,7 @@ export default function ResultsPage() {
                     type="button"
                     onClick={() => setSubmission({ ...submission, mood })}
                     whileTap={{ scale: 0.93 }}
-                    className={`px-4 py-1.5 lg:px-5 lg:py-2 rounded-full text-xs lg:text-base border transition-colors capitalize ${
+                    className={`px-4 py-1.5 lg:px-5 lg:py-2 rounded-full text-xs lg:text-sm border transition-colors capitalize ${
                       submission.mood === mood
                         ? "bg-[var(--color-ink)] text-white border-[var(--color-ink)]"
                         : "text-[var(--color-muted)] border-stone-200 hover:border-[var(--color-ink)] hover:text-[var(--color-ink)]"
@@ -385,7 +385,7 @@ export default function ResultsPage() {
                 onClick={() => regenerate(submission.mood)}
                 disabled={regenerating}
                 whileTap={{ scale: 0.97 }}
-                className="w-full py-3.5 lg:py-4 text-xs lg:text-base tracking-[0.15em] uppercase rounded-2xl bg-[var(--color-ink)] text-white hover:opacity-80 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
+                className="w-full py-3.5 lg:py-4 text-xs lg:text-sm tracking-[0.15em] uppercase rounded-2xl bg-[var(--color-ink)] text-white hover:opacity-80 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
               >
                 {regenerating ? "Finding something else…" : "Give me something different"}
               </motion.button>
@@ -397,7 +397,7 @@ export default function ResultsPage() {
             <motion.div
               whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(160,120,100,0.11)" }}
               transition={{ type: "spring", stiffness: 350, damping: 28 }}
-              className="bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12"
+              className="bg-white/90 rounded-3xl shadow-sm p-6 sm:p-8 lg:p-8"
             >
               <div className="flex items-center justify-between mb-5 lg:mb-6">
                 <p className="text-[10px] lg:text-sm tracking-[0.18em] text-[var(--color-muted)] uppercase">
@@ -447,7 +447,7 @@ export default function ResultsPage() {
                       {profile.history.slice(0, 5).map((h, i) => (
                         <div key={i} className="flex gap-3 items-baseline">
                           <span className="text-[10px] lg:text-sm tracking-widest text-[var(--color-muted)] uppercase w-10 shrink-0">{h.type}</span>
-                          <span className="text-xs lg:text-base text-[var(--color-ink)]">{h.title}</span>
+                          <span className="text-xs lg:text-sm text-[var(--color-ink)]">{h.title}</span>
                           {h.note && <span className="text-xs lg:text-sm text-[var(--color-muted)] italic truncate">— {h.note}</span>}
                         </div>
                       ))}
@@ -532,12 +532,12 @@ function CardContent({
         </motion.button>
       </div>
       <h2
-        className="text-lg sm:text-xl lg:text-3xl leading-snug text-[var(--color-ink)] mb-2 lg:mb-3"
+        className="text-lg sm:text-xl lg:text-xl leading-snug text-[var(--color-ink)] mb-2 lg:mb-3"
         style={{ fontFamily: "var(--font-serif)" }}
       >
         {title}
       </h2>
-      <p className="text-sm lg:text-lg text-[var(--color-muted)] leading-relaxed mb-4 lg:mb-5">
+      <p className="text-sm lg:text-base text-[var(--color-muted)] leading-relaxed mb-4 lg:mb-5">
         {description}
       </p>
 
@@ -558,7 +558,7 @@ function CardContent({
         <motion.p
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-xs lg:text-base text-[var(--color-muted)] italic"
+          className="text-xs lg:text-sm text-[var(--color-muted)] italic"
         >
           Saved to your profile
         </motion.p>
@@ -571,20 +571,20 @@ function CardContent({
             value={feedbackNote}
             onChange={(e) => setFeedbackNote(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addToProfile(type, title)}
-            className="w-full bg-transparent text-sm lg:text-lg text-[var(--color-ink)] placeholder:text-stone-300 border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-1.5 transition-colors"
+            className="w-full bg-transparent text-sm lg:text-base text-[var(--color-ink)] placeholder:text-stone-300 border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-1.5 transition-colors"
           />
           <div className="flex gap-4">
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => addToProfile(type, title)}
-              className="text-xs lg:text-base font-medium text-[var(--color-ink)] underline underline-offset-2"
+              className="text-xs lg:text-sm font-medium text-[var(--color-ink)] underline underline-offset-2"
             >
               Save to profile
             </motion.button>
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setFeedbackOpen(null)}
-              className="text-xs lg:text-base text-[var(--color-muted)]"
+              className="text-xs lg:text-sm text-[var(--color-muted)]"
             >
               Cancel
             </motion.button>
@@ -595,7 +595,7 @@ function CardContent({
           onClick={() => openFeedback(type)}
           whileHover={{ x: 2 }}
           whileTap={{ scale: 0.95 }}
-          className="text-xs lg:text-base text-[var(--color-muted)] border border-stone-200 rounded-full px-4 py-1.5 hover:border-[var(--color-ink)] hover:text-[var(--color-ink)] transition-colors"
+          className="text-xs lg:text-sm text-[var(--color-muted)] border border-stone-200 rounded-full px-4 py-1.5 hover:border-[var(--color-ink)] hover:text-[var(--color-ink)] transition-colors"
         >
           I did this →
         </motion.button>
@@ -736,7 +736,7 @@ function ProfileRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex gap-4">
       <span className="text-[10px] lg:text-sm tracking-widest text-[var(--color-muted)] uppercase w-20 shrink-0 pt-0.5">{label}</span>
-      <span className="text-xs lg:text-base text-[var(--color-ink)] leading-relaxed">{value}</span>
+      <span className="text-xs lg:text-sm text-[var(--color-ink)] leading-relaxed">{value}</span>
     </div>
   );
 }
@@ -744,7 +744,7 @@ function ProfileRow({ label, value }: { label: string; value: string }) {
 function EditField({ label, value, onChange, multiline }: {
   label: string; value: string; onChange: (v: string) => void; multiline?: boolean;
 }) {
-  const base = "w-full bg-transparent text-[var(--color-ink)] text-sm lg:text-lg border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-2 transition-colors";
+  const base = "w-full bg-transparent text-[var(--color-ink)] text-sm lg:text-base border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-2 transition-colors";
   return (
     <div>
       <label className="block text-[10px] lg:text-sm tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2">{label}</label>
