@@ -660,6 +660,8 @@ function MobileCarousel({
               openFeedback={openFeedback}
               addToProfile={addToProfile}
               setFeedbackOpen={setFeedbackOpen}
+              cardLoading={cardLoading}
+              regenerateCard={regenerateCard}
             />
           </motion.div>
         </AnimatePresence>
