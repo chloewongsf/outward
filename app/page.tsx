@@ -213,7 +213,7 @@ export default function Home() {
         )}
         <div className="text-center">
           <h1
-            className="text-6xl sm:text-7xl lg:text-8xl leading-none mb-6"
+            className="text-6xl sm:text-7xl lg:text-6xl leading-none mb-6"
             style={{ fontFamily: "var(--font-serif)", color: "rgba(180, 130, 140, 0.55)" }}
           >
             {greeting().split(" ").map((w, i) => <span key={i} className="block">{w}</span>)}
@@ -261,7 +261,7 @@ export default function Home() {
             Outward
           </p>
           <h1
-            className="text-6xl sm:text-7xl lg:text-8xl leading-none"
+            className="text-6xl sm:text-7xl lg:text-6xl leading-none"
             style={{ fontFamily: "var(--font-serif)", color: "rgba(180, 130, 140, 0.55)" }}
           >
             {greeting().split(" ").map((w, i) => <span key={i} className="block">{w}</span>)}
