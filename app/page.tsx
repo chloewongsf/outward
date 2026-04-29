@@ -273,13 +273,13 @@ export default function Home() {
             Tell us about yourself once — we&apos;ll handle the rest every morning.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-7 lg:space-y-9">
+          <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-6">
             <div>
-              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2.5 lg:mb-3">
+              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2 lg:mb-2.5">
                 Things you love
               </label>
               <textarea
-                rows={2}
+                rows={1}
                 placeholder="Le Mary Celeste, Joan Didion, Porto Venere"
                 value={form.favoriteThings}
                 onChange={(e) => setForm({ ...form, favoriteThings: e.target.value })}
@@ -289,7 +289,7 @@ export default function Home() {
             </div>
 
             <div>
-              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2.5 lg:mb-3">
+              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2 lg:mb-2.5">
                 Where you are
               </label>
               <input
@@ -303,7 +303,7 @@ export default function Home() {
             </div>
 
             <div>
-              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2.5 lg:mb-3">
+              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2 lg:mb-2.5">
                 How you&apos;d describe yourself
               </label>
               <input
@@ -317,7 +317,7 @@ export default function Home() {
             </div>
 
             <div>
-              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-3">
+              <label className="block text-[10px] lg:text-xs tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2 lg:mb-2.5">
                 Today&apos;s mood
               </label>
               <div className="flex gap-2 flex-wrap">
