@@ -749,7 +749,7 @@ function EditField({ label, value, onChange, multiline }: {
     <div>
       <label className="block text-[10px] lg:text-sm tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2">{label}</label>
       {multiline
-        ? <textarea rows={2} value={value} onChange={(e) => onChange(e.target.value)} className={`${base} resize-none leading-relaxed`} />
+        ? <textarea rows={1} value={value} onChange={(e) => onChange(e.target.value)} className={`${base} resize-none`} />
         : <input type="text" value={value} onChange={(e) => onChange(e.target.value)} className={base} />}
     </div>
   );
