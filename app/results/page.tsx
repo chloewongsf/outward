@@ -456,7 +456,7 @@ export default function ResultsPage() {
                 </div>
               ) : (
                 <div className="space-y-6 lg:space-y-8">
-                  <EditField label="Things you love"             value={draft.favoriteThings} onChange={(v) => setDraft({ ...draft, favoriteThings: v })} multiline />
+                  <EditField label="Things you love"             value={draft.favoriteThings} onChange={(v) => setDraft({ ...draft, favoriteThings: v })} />
                   <EditField label="Where you are"               value={draft.location}       onChange={(v) => setDraft({ ...draft, location: v })} />
                   <EditField label="How you'd describe yourself" value={draft.adjectives}      onChange={(v) => setDraft({ ...draft, adjectives: v })} />
                   <p className="text-[10px] lg:text-sm text-[var(--color-muted)] leading-relaxed">
@@ -741,16 +741,14 @@ function ProfileRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-function EditField({ label, value, onChange, multiline }: {
-  label: string; value: string; onChange: (v: string) => void; multiline?: boolean;
+function EditField({ label, value, onChange }: {
+  label: string; value: string; onChange: (v: string) => void;
 }) {
   const base = "w-full bg-transparent text-[var(--color-ink)] text-sm lg:text-base border-b border-stone-200 focus:border-[var(--color-ink)] focus:outline-none pb-2 transition-colors";
   return (
     <div>
       <label className="block text-[10px] lg:text-sm tracking-[0.18em] text-[var(--color-warm)] uppercase mb-2">{label}</label>
-      {multiline
-        ? <textarea rows={1} value={value} onChange={(e) => onChange(e.target.value)} className={`${base} resize-none`} />
-        : <input type="text" value={value} onChange={(e) => onChange(e.target.value)} className={base} />}
+      <input type="text" value={value} onChange={(e) => onChange(e.target.value)} className={base} />
     </div>
   );
 }
