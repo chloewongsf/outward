@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { getSkyGradient } from "../lib/sky";
 
 interface Recommendation {
   taste_summary: string;
@@ -84,6 +85,7 @@ export default function ResultsPage() {
   const [feedbackNote, setFeedbackNote] = useState("");
   const [added, setAdded]           = useState<Set<string>>(new Set());
   const [cardLoading, setCardLoading]   = useState<string | null>(null);
+  const [bg, setBg]                 = useState("");
 
   useEffect(() => {
     const stored = sessionStorage.getItem("outward_results");
@@ -228,13 +230,17 @@ export default function ResultsPage() {
     setEditing(false);
   }
 
-  if (!data) return null;
+  useEffect(() => {
+    setBg(getSkyGradient());
+    const interval = setInterval(() => setBg(getSkyGradient()), 60_000);
+    return () => clearInterval(interval);
+  }, []);
 
-  const bg = "linear-gradient(160deg, #FDF8F2 0%, #F5E2DF 45%, #E8D8EE 100%)";
+  if (!data) return null;
   const feedbackProps = { added, feedbackOpen, feedbackNote, setFeedbackNote, openFeedback, addToProfile, setFeedbackOpen, cardLoading, regenerateCard };
 
   return (
-    <div className="min-h-screen" style={{ background: bg }}>
+    <div className="min-h-screen" style={{ background: bg, transition: "background 90s linear" }}>
       <main className="max-w-md sm:max-w-xl lg:max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 pt-12 sm:pt-16 lg:pt-20 pb-16 lg:pb-24">
 
         {/* Nav + dateline */}

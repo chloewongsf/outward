@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { getSkyGradient } from "./lib/sky";
 
 type Mood = "calm" | "curious" | "social" | "reflective";
 const MOODS: Mood[] = ["calm", "curious", "social", "reflective"];
@@ -195,14 +196,19 @@ export default function Home() {
 
   // ── Shared styles ──────────────────────────────────────────────────────────
 
-  const bg = "linear-gradient(160deg, #FDF8F2 0%, #F5E2DF 45%, #E8D8EE 100%)";
+  const [bg, setBg] = useState("");
+  useEffect(() => {
+    setBg(getSkyGradient());
+    const interval = setInterval(() => setBg(getSkyGradient()), 60_000);
+    return () => clearInterval(interval);
+  }, []);
 
   // ── Auto-generate / loading screen ────────────────────────────────────────
 
   if (mode === "loading" || mode === "generating") {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6"
-        style={{ background: bg }}>
+        style={{ background: bg, transition: "background 90s linear" }}>
         {mode === "generating" && (
           <div className="fixed top-0 left-0 right-0 h-[2px] bg-white/40 z-50">
             <div
@@ -242,7 +248,7 @@ export default function Home() {
   // ── Onboarding form ────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen" style={{ background: bg }}>
+    <div className="min-h-screen" style={{ background: bg, transition: "background 90s linear" }}>
       {(submitting || submitDone) && (
         <div className="fixed top-0 left-0 right-0 h-[2px] bg-white/40 z-50">
           <div
